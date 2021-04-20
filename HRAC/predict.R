@@ -19,7 +19,7 @@ hrac_predictions <- list(RF = list(train = list(), test = list(), rest = list(),
                          SVM = list(train = list(), test = list(), rest = list(), z = list(), np = list()), 
                          NB = list(train = list(), test = list(), rest = list(), z = list(), np = list()))
 
- # A) Predict labels and class probabilities for each dataset 
+# Predict labels and class probabilities for each dataset 
           
   for (i in 1:length(hrac_datasets)) {
       # RF
