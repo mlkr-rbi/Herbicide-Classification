@@ -1,0 +1,1 @@
+Data are preprocessed and standardized with (x - mean(x)) / sd(x) formula.
