@@ -1,0 +1,2 @@
+Compound space is represented in terms of 166-bit MACCS structural fingerprints. 
+Data is preprocessed to contain only fingerprints with >= 5 units.
