@@ -4,9 +4,9 @@ library(klaR)
 nb.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "final", savePredictions = "final") # , sampling = "up"
 
 # Set up a tuning grid
-grid <-  expand.grid(fL=c(0,0.5,1.0), 
+grid <-  expand.grid(fL=c(0,0.3,0.5,0.7,1.0), 
                      usekernel = TRUE, 
-                     adjust=c(0.1,0.5,1.0))
+                     adjust=c(0.1,0.3,0.5,0.7,1.0))
 
 
 # Hyperparameters tuning
