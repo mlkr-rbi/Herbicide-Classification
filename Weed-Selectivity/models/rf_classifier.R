@@ -21,10 +21,11 @@ set.seed(111)
 rf.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "final", savePredictions = "final")
 
 # Set hyperparameter grid
-tunegrid <- expand.grid(.mtry=c(2,4,6,10), 
+tunegrid <- expand.grid(.mtry=c(2,4,6,8), 
                         .ntree=c(100, 500, 1000, 1500, 2000), 
                         .min_sample_split=c(4, 8, 10, 14))
 
+# LogP dataset
 # Hyperparameters tuning
 set.seed(111)
 selP_rf <- train(factor(Selectivity) ~., data = s.train.logP,
@@ -45,5 +46,28 @@ selP_rf.fin <- train(factor(Selectivity) ~., data = s.train.logP,
                     trControl = trainControl(method = "none"))
                     
 # Save pretrained model
-saveRDS(selP_rf.fin, "./hrac_nb_model.rds")
+saveRDS(selP_rf.fin, "./wsel_logp_rf_model.rds")
 
+
+# LogD dataset
+# Hyperparameters tuning
+set.seed(111)
+selD_rf <- train(factor(Selectivity) ~., data = s.train.logD,
+             method = ext_RF,
+             tuneGrid = tunegrid,
+             metric = "Accuracy",
+             trControl = rf.ctrl)
+
+plot(selD_rf)
+
+
+# Train model on whole train set with optimal hyperparameters
+set.seed(111)
+selD_rf.fin <- train(factor(Selectivity) ~., data = s.train.logD,
+                    method = ext_RF,
+                    tuneGrid = selD_rf$bestTune,
+                    metric = "Accuracy",
+                    trControl = trainControl(method = "none"))
+                    
+# Save pretrained model
+saveRDS(selD_rf.fin, "./wsel_logd_rf_model.rds")
