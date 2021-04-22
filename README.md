@@ -6,7 +6,7 @@ This repository contains code for hyperparamter tuning with 10x10-fold cross-val
 ## Datasets 
 
 ### HRAC
-HRAC dataset contains 346 synthetic herbicides available in original HRAC list, and extended sample of 163 herbicides collected from literature and free-access online databases - with additional 131 phytotoxic natural products collected from literature. Chemical space for HRAC classification approach were represented with 166-bit MACCS structural fingeprints
+HRAC dataset contains 346 synthetic herbicides available in original HRAC list, and extended sample of 163 herbicides collected from literature and free-access online databases - with additional 131 phytotoxic natural products collected from literature. Chemical space for HRAC classification approach was represented with 166-bit MACCS structural fingeprints
 
 ### Weed Selectivity
-Dataset used for weed selectivity and application stage inference were collected from subsets of 221 and 323 herbicides, respectively, with assigned labels. Weed selectivity datasets were all preprocessed and standardized [(x - mean(x)) / sd(x)] prior to upload.
+Dataset used for weed selectivity inference was collected from a subset of 221 herbicides, respectively, with assigned labels. Weed selectivity datasets were all preprocessed and standardized [(x - mean(x)) / sd(x)] prior to upload.
