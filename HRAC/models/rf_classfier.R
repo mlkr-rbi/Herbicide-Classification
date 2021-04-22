@@ -16,7 +16,7 @@ ext_RF$sort <- function(x) x[order(x[,1]),]
 ext_RF$levels <- function(x) x$classes
 
 # Set trainControl
-rf.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "all", savePredictions = "all")
+rf.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "final", savePredictions = "final")
 
 # Set up a tuning grid
 rf.grid <- expand.grid(.mtry=c(seq(2,34,3)), 
@@ -33,7 +33,7 @@ hrac_rf <- train(factor(HRAC2020_class) ~ ., h.train,
 
 plot(hrac_rf)
 
-# Train model on whole train set with optimat hyperparameters
+# Train model on whole train set with optimal hyperparameters
 set.seed(111)
 hrac_rf.fin <- train(factor(HRAC2020_class) ~ ., h.train, 
                      method = ext_RF,
