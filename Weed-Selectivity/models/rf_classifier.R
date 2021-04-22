@@ -21,7 +21,7 @@ set.seed(111)
 rf.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "final", savePredictions = "final")
 
 # Set hyperparameter grid
-tunegrid <- expand.grid(.mtry=c(2,4,6,8), 
+rf.grid <- expand.grid(.mtry=c(2,4,6,8), 
                         .ntree=c(100, 500, 1000, 1500, 2000), 
                         .min_sample_split=c(4, 8, 10, 14))
 
@@ -30,7 +30,7 @@ tunegrid <- expand.grid(.mtry=c(2,4,6,8),
 set.seed(111)
 selP_rf <- train(factor(Selectivity) ~., data = s.train.logP,
              method = ext_RF,
-             tuneGrid = tunegrid,
+             tuneGrid = rf.grid,
              metric = "Accuracy",
              trControl = rf.ctrl)
 
@@ -54,7 +54,7 @@ saveRDS(selP_rf.fin, "./wsel_logp_rf_model.rds")
 set.seed(111)
 selD_rf <- train(factor(Selectivity) ~., data = s.train.logD,
              method = ext_RF,
-             tuneGrid = tunegrid,
+             tuneGrid = rf.grid,
              metric = "Accuracy",
              trControl = rf.ctrl)
 
