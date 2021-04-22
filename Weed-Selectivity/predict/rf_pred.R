@@ -8,7 +8,7 @@ sRF.pred.ls <- list(LogD=list(), LogP=list())
 
 for (i in 1:4) {
    sRF.pred.ls[["LogD"]][[i]] <- predict(selD_rf.fin, sel_ts.ls[["LogD"]][[i]][,-1])
-   sRF.pred.ls[["LogP"]][[i]] <- predict(selP_rf.fin_, sel_ts.ls[["LogP"]][[i]][,-1])
+   sRF.pred.ls[["LogP"]][[i]] <- predict(selP_rf.fin, sel_ts.ls[["LogP"]][[i]][,-1])
 
     names(sRF.pred.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
     names(sRF.pred.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
@@ -20,7 +20,7 @@ sRF.pred_p.ls <- list(LogD=list(), LogP=list())
           
 for (i in 1:4) {
     sRF.pred_p.ls[["LogD"]][[i]] <- predict(selD_rf.fin, sel_ts.ls[["LogD"]][[i]][,-1], "prob")
-    sRF.pred_p.ls[["LogP"]][[i]] <- predict(selP_rf.fin_, sel_ts.ls[["LogP"]][[i]][,-1], "prob")
+    sRF.pred_p.ls[["LogP"]][[i]] <- predict(selP_rf.fin, sel_ts.ls[["LogP"]][[i]][,-1], "prob")
 
     names(sRF.pred_p.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
     names(sRF.pred_p.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
