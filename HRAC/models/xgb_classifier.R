@@ -1,5 +1,5 @@
 # Set trainControl
-xgb.ctrl <- trainControl(method = "repeatedcv", repeats = 10, number = 10,  returnResamp = "final", savePredictions = "final") # , allowParallel=T
+xgb.ctrl <- trainControl(method = "repeatedcv", repeats = 10, number = 10,  returnResamp = "final", savePredictions = "final")
 
 # Set up a tuning grid
 xgb.grid <- expand.grid(nrounds = c(100, 500, 1000, 1500), 
