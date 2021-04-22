@@ -1,3 +1,12 @@
+# List of test sets
+sel_ts.ls <- list(list(s.train.logD, s.test.logD, s.cases.logD, s.np.logD), 
+                  list(s.train.logP, s.test.logP, s.cases.logP, s.np.logP))
+
+names(sel_ts.ls) <- c("LogD", "LogP") 
+names(sel_ts.ls[["LogD"]]) <- c("s.train.logD", "s.test.logD", "s.cases.logD", "s.np.logD")
+names(sel_ts.ls[["LogP"]]) <- c("s.train.logP", "s.test.logP", "s.cases.logP", "s.np.logP")
+
+
 # Import pretrained model
 selD_rf.fin <- readRDS("./selD_rf.fin")
 selP_rf.fin <- readRDS("./selP_rf.fin")
