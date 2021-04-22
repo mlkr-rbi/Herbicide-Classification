@@ -13,7 +13,7 @@ Dataset used for weed selectivity inference was collected from a subset of 221 h
 
 
 ## Requirements
-R version 3.6.3
-randomForest 4.6-14
-caret 6.0-84
-klaR 0.6-15
+R version 3.6.3  
+randomForest 4.6-14  
+caret 6.0-84  
+klaR 0.6-15  
