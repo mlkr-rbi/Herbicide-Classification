@@ -13,21 +13,9 @@ for (i in 1:4) {
     names(sSVM.pred.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
     names(sSVM.pred.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 }
+     
           
-          
-# B) Predict for each dataset - "prob"
-sSVM.pred_p.ls <- list(LogD=list(), LogP=list())
-          
-for (i in 1:4) {
-    sSVM.pred_p.ls[["LogD"]][[i]] <- predict(selD_svm.fin, sel_ts.ls[["LogD"]][[i]][,-1], "prob")
-    sSVM.pred_p.ls[["LogP"]][[i]] <- predict(selP_svm.fin, sel_ts.ls[["LogP"]][[i]][,-1], "prob")
-
-    names(sSVM.pred_p.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
-    names(sSVM.pred_p.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
-
-}
-          
-# C) Confusion matrix
+# B) Confusion matrix
 sSVM.conf.ls <- list(LogD=list(), LogP=list())
           
 for (i in 1:2) {
