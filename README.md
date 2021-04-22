@@ -10,3 +10,10 @@ HRAC dataset contains 346 synthetic herbicides available in original HRAC list, 
 
 ### Weed Selectivity
 Dataset used for weed selectivity inference was collected from a subset of 221 herbicides, respectively, with assigned labels. Weed selectivity datasets were all preprocessed and standardized [(x - mean(x)) / sd(x)] prior to upload.
+
+
+## Requirements
+R version 3.6.3
+randomForest 4.6-14
+caret 6.0-84
+klaR 0.6-15
