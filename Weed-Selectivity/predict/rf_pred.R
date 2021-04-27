@@ -1,3 +1,5 @@
+library(caret)
+
 # Import data - LogD
 s.train.logD <- read.csv('../data/LogD/s_train_logD.csv', row.names=1)
 s.test.logD <- read.csv('../data/LogD/s_test_logD.csv', row.names=1)
@@ -32,6 +34,18 @@ for (i in 1:4) {
     names(sRF.pred.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
     names(sRF.pred.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 }
+
+# Write files - "labels"
+write.csv(sRF.pred.ls[["LogD"]][[1]], 'output/rf/logD/rf_s_train_pred.csv')
+write.csv(sRF.pred.ls[["LogD"]][[2]], 'output/rf/logD/rf_s_test_pred.csv')
+write.csv(sRF.pred.ls[["LogD"]][[3]], 'output/rf/logD/rf_s_cases_pred.csv')
+write.csv(sRF.pred.ls[["LogD"]][[4]], 'output/rf/logD/rf_s_np_pred.csv')
+
+write.csv(sRF.pred.ls[["LogP"]][[1]], 'output/rf/logP/rf_s_train_pred.csv')
+write.csv(sRF.pred.ls[["LogP"]][[2]], 'output/rf/logP/rf_s_test_pred.csv')
+write.csv(sRF.pred.ls[["LogP"]][[3]], 'output/rf/logP/rf_s_cases_pred.csv')
+write.csv(sRF.pred.ls[["LogP"]][[4]], 'output/rf/logP/rf_s_np_pred.csv')
+
           
           
 # B) Predict for each dataset - "prob"
@@ -45,7 +59,20 @@ for (i in 1:4) {
     names(sRF.pred_p.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 
 }
-          
+
+
+# Write files - "probs"
+write.csv(sRF.pred_p.ls[["LogD"]][[1]], 'output/rf/logD/rf_s_train_pred_p.csv')
+write.csv(sRF.pred_p.ls[["LogD"]][[2]], 'output/rf/logD/rf_s_test_pred_p.csv')
+write.csv(sRF.pred_p.ls[["LogD"]][[3]], 'output/rf/logD/rf_s_cases_pred_p.csv')
+write.csv(sRF.pred_p.ls[["LogD"]][[4]], 'output/rf/logD/rf_s_np_pred_p.csv')
+
+write.csv(sRF.pred_p.ls[["LogP"]][[1]], 'output/rf/logP/rf_s_train_pred_p.csv')
+write.csv(sRF.pred_p.ls[["LogP"]][[2]], 'output/rf/logP/rf_s_test_pred_p.csv')
+write.csv(sRF.pred_p.ls[["LogP"]][[3]], 'output/rf/logP/rf_s_cases_pred_p.csv')
+write.csv(sRF.pred_p.ls[["LogP"]][[4]], 'output/rf/logP/rf_s_np_pred_p.csv')
+
+
 # C) Confusion matrix
 sRF.conf.ls <- list(LogD=list(), LogP=list())
           
@@ -57,3 +84,18 @@ for (i in 1:2) {
     names(sRF.conf.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 
 }
+
+
+# Write files - "overall statistics"
+write.csv(sRF.conf.ls[["LogD"]][[1]]$overall, 'output/rf/logD/overall_statistics.csv')
+write.csv(sRF.conf.ls[["LogD"]][[2]]$overall, 'output/rf/logD/overall_statistics.csv')
+
+write.csv(sRF.conf.ls[["LogP"]][[1]]$overall, 'output/rf/logD/overall_statistics.csv')
+write.csv(sRF.conf.ls[["LogP"]][[2]]$overall, 'output/rf/logD/overall_statistics.csv')
+
+# Write files - "spec by class"
+write.csv(sRF.conf.ls[["LogD"]][[1]]$byClass, 'output/rf/logP/spec_byClass.csv')
+write.csv(sRF.conf.ls[["LogD"]][[2]]$byClass, 'output/rf/logP/spec_byClass.csv')
+
+write.csv(sRF.conf.ls[["LogP"]][[1]]$byClass, 'output/rf/logP/spec_byClass.csv')
+write.csv(sRF.conf.ls[["LogP"]][[2]]$byClass, 'output/rf/logP/spec_byClass.csv')
