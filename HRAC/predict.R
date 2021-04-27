@@ -1,8 +1,8 @@
 # Import pretrained models (HRAC Classifiers)
-hrac_rf.fin <- readRDS("./hrac_rf.fin.rds")
-hrac_xgb.fin <- readRDS("./hrac_xgb.fin.rds")
-hrac_svm.fin <- readRDS("./hrac_svm.fin.rds")
-hrac_nb.fin <- readRDS("./hrac_nb.fin.rds")
+hrac_rf.fin <- readRDS("models/hrac_rf.fin.rds")
+hrac_xgb.fin <- readRDS("models/hrac_xgb.fin.rds")
+hrac_svm.fin <- readRDS("models/hrac_svm.fin.rds")
+hrac_nb.fin <- readRDS("models/hrac_nb.fin.rds")
 
 # Import data
 h.train <- read.csv('data/h_train.csv', row.names=1)
