@@ -5,10 +5,10 @@ s.cases.logD <- read.csv('../data/LogD/s_cases_logD.csv', row.names=1)
 s.np.logD <- read.csv('../data/LogD/s_np_logD.csv', row.names=1)
 
 # Import data - LogP
-s.train.logP <- read.csv('../data/LogD/s_train_logP.csv', row.names=1)
-s.test.logP <- read.csv('../data/LogD/s_test_logP.csv', row.names=1)
-s.cases.logP <- read.csv('../data/LogD/s_cases_logP.csv', row.names=1)
-s.np.logP <- read.csv('../data/LogD/s_np_logP.csv', row.names=1)
+s.train.logP <- read.csv('../data/LogP/s_train_logP.csv', row.names=1)
+s.test.logP <- read.csv('../data/LogP/s_test_logP.csv', row.names=1)
+s.cases.logP <- read.csv('../data/LogP/s_cases_logP.csv', row.names=1)
+s.np.logP <- read.csv('../data/LogP/s_np_logP.csv', row.names=1)
 
 
 # List of test sets
