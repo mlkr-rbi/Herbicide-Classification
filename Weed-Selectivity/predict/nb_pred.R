@@ -28,7 +28,7 @@ selP_nb.fin <- readRDS("../models/wsel_logp_nb_model.rds")
 # A) Predict for each dataset - "label"
 sNB.pred.ls <- list(LogD=list(), LogP=list())   
 
-for (i in 1:3) {
+for (i in 1:4) {
     sNB.pred.ls[["LogD"]][[i]] <- predict(selD_nb.fin, sel_ts.ls[["LogD"]][[i]][,-1])
     sNB.pred.ls[["LogP"]][[i]] <- predict(selP_nb.fin, sel_ts.ls[["LogP"]][[i]][,-1])
 
@@ -40,7 +40,7 @@ for (i in 1:3) {
 # B) Predict for each dataset - "prob"
 sNB.pred_p.ls <- list(LogD=list(), LogP=list())
           
-for (i in 1:3) {
+for (i in 1:4) {
     sNB.pred_p.ls[["LogD"]][[i]] <- predict(selD_nb.fin, sel_ts.ls[["LogD"]][[i]][,-1], "prob")
     sNB.pred_p.ls[["LogP"]][[i]] <- predict(selP_nb.fin, sel_ts.ls[["LogP"]][[i]][,-1], "prob")
 
