@@ -20,8 +20,8 @@ names(sel_ts.ls[["LogP"]]) <- c("s.train.logP", "s.test.logP", "s.cases.logP", "
 
 
 # Import pretrained model
-selD_rf.fin <- readRDS("./selD_rf.fin")
-selP_rf.fin <- readRDS("./selP_rf.fin")
+selD_rf.fin <- readRDS("./wsel_logd_rf_model.rds")
+selP_rf.fin <- readRDS("./wsel_logp_rf_model.rds")
 
 
 # A) Predict for each dataset - "label"
