@@ -1,4 +1,6 @@
 library(klaR)
+library(caret)
+
 
 # Set trainControl
 nb.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "final", savePredictions = "final")
