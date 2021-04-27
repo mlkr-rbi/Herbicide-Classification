@@ -1,3 +1,9 @@
+# Load libraries
+library(caret)
+
+# Import data
+h.train <- read.csv('../data/h_train.csv', row.names=1)
+
 # Set trainControl
 xgb.ctrl <- trainControl(method = "repeatedcv", repeats = 10, number = 10,  returnResamp = "final", savePredictions = "final")
 

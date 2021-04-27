@@ -1,3 +1,11 @@
+# Load libraries
+library(randomForest)
+library(caret)
+
+# Import data
+s.train.logD <- read.csv('../data/LogD/s_train_logD.csv', row.names=1)
+s.train.logP <- read.csv('../data/LogP/s_train_logP.csv', row.names=1)
+
 # Set trainControl
 set.seed(111)
 svm.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10,  returnResamp = "final", savePredictions = "final")
@@ -8,7 +16,7 @@ svm.grid <- expand.grid(sigma= 2^c(-10, -5, -4, -2, -1), C= 2^c(0:5))
 # LOG P
 # Hyperparamter tuning
 set.seed(111)
-selP_svm <- train(factor(Selectivity) ~., data = s.tr_r1,
+selP_svm <- train(factor(Selectivity) ~., data = s.train.logP,
               method = "svmRadial", 
               trControl = svm.ctrl,  
               metric = "Accuracy",
@@ -17,7 +25,7 @@ plot(selP_svm)
 
 # Train model on on whole train set with optimal hyperparameters
 set.seed(111)
-selP_svm.fin_ <- train(factor(Selectivity) ~., data = s.train.logP,
+selP_svm.fin <- train(factor(Selectivity) ~., data = s.train.logP,
                      method = "svmRadial", 
                      trControl = trainControl(method="none"),
                      tuneGrid = selP_svm$bestTune,

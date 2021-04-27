@@ -1,3 +1,9 @@
+# Load libraries
+library(caret)
+
+# Import data
+h.train <- read.csv('../data/h_train.csv', row.names=1)
+
 # Set trainControl
 svm.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "final", savePredictions = "final")
 

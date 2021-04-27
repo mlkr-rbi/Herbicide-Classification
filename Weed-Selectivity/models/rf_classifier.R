@@ -1,5 +1,10 @@
+# Load libraries
 library(randomForest)
 library(caret)
+
+# Import data
+s.train.logD <- read.csv('../data/LogD/s_train_logD.csv', row.names=1)
+s.train.logP <- read.csv('../data/LogP/s_train_logP.csv', row.names=1)
 
 # EXTENDING CARET HYPERPARAMETER TUNING
 ext_RF <- list(type = "Classification", library = "randomForest", loop = NULL)

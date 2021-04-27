@@ -4,6 +4,13 @@ hrac_xgb.fin <- readRDS("./hrac_xgb.fin.rds")
 hrac_svm.fin <- readRDS("./hrac_svm.fin.rds")
 hrac_nb.fin <- readRDS("./hrac_nb.fin.rds")
 
+# Import data
+h.train <- read.csv('data/h_train.csv', row.names=1)
+h.test <- read.csv('data/h_test.csv', row.names=1)
+h.rest <- read.csv('data/h_rest.csv', row.names=1)
+h.zclass <- read.csv('data/h_zclass.csv', row.names=1)
+h.np <- read.csv('data/h_np.csv', row.names=1)
+
 # List of datasets (HRAC) 
 hrac_datasets<- list(h.train, h.test, h.rest, h.zclass, h.np) 
 names(hrac_datasets) <- c("h.train", "h.test", "h.rest", "h.zclass", "h.np") 

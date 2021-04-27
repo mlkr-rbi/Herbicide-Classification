@@ -1,9 +1,16 @@
+# Load librarires
+library(caret)
+library(klaR)
+
+# Import data
+s.train.logD <- read.csv('../data/LogD/s_train_logD.csv', row.names=1)
+s.train.logP <- read.csv('../data/LogP/s_train_logP.csv', row.names=1)
+
 # Set trainControl
 nb.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "final", savePredictions = "final")
 
 # Set hyperparameter grid
-library(klaR)
-grid <-  expand.grid(fL=c(0,0.3,0.5,0.7,1.0), usekernel = TRUE, adjust=c(0.1,0.3,0.5,0.7,1.0))
+grid <- expand.grid(fL=c(0,0.3,0.5,0.7,1.0), usekernel = TRUE, adjust=c(0.1,0.3,0.5,0.7,1.0))
 
 # LOG P
 # Tune hyperparameters and evaluate model 

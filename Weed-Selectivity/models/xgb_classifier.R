@@ -1,3 +1,11 @@
+# Load libraries
+library(randomForest)
+library(caret)
+
+# Import data
+s.train.logD <- read.csv('../data/LogD/s_train_logD.csv', row.names=1)
+s.train.logP <- read.csv('../data/LogP/s_train_logP.csv', row.names=1)
+
 # Set trainControl
 xgb.ctrl <- trainControl(method = "repeatedcv", repeats = 10, number = 10, returnResamp = "final", savePredictions = "final")
 

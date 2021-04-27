@@ -1,6 +1,9 @@
+# Load libraries
 library(klaR)
 library(caret)
 
+# Import data
+h.train <- read.csv('../data/h_train.csv', row.names=1)
 
 # Set trainControl
 nb.ctrl <- trainControl(method="repeatedcv", number=10, repeats=10, returnResamp = "final", savePredictions = "final")

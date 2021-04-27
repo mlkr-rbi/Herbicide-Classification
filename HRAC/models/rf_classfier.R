@@ -1,5 +1,9 @@
+# Load libraries
 library(randomForest)
 library(caret)
+
+# Import data
+h.train <- read.csv('../data/h_train.csv', row.names=1)
 
 # Extending tunable hyperparameters
 ext_RF <- list(type = "Classification", library = "randomForest", loop = NULL)
