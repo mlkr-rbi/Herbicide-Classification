@@ -36,6 +36,19 @@ for (i in 1:4) {
     names(sNB.pred.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 
 }
+
+
+# Write files - "labels"
+write.csv(sNB.pred.ls[["LogD"]][[1]], 'output/nb/logD/nb_s_train_pred.csv')
+write.csv(sNB.pred.ls[["LogD"]][[2]], 'output/nb/logD/nb_s_test_pred.csv')
+write.csv(sNB.pred.ls[["LogD"]][[3]], 'output/nb/logD/nb_s_cases_pred.csv')
+write.csv(sNB.pred.ls[["LogD"]][[4]], 'output/nb/logD/nb_s_np_pred.csv')
+
+write.csv(sNB.pred.ls[["LogP"]][[1]], 'output/nb/logP/nb_s_train_pred.csv')
+write.csv(sNB.pred.ls[["LogP"]][[2]], 'output/nb/logP/nb_s_test_pred.csv')
+write.csv(sNB.pred.ls[["LogP"]][[3]], 'output/nb/logP/nb_s_cases_pred.csv')
+write.csv(sNB.pred.ls[["LogP"]][[4]], 'output/nb/logP/nb_s_np_pred.csv')
+
           
 # B) Predict for each dataset - "prob"
 sNB.pred_p.ls <- list(LogD=list(), LogP=list())
@@ -48,6 +61,19 @@ for (i in 1:4) {
     names(sNB.pred_p.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 
 }
+
+
+# Write files - "probs"
+write.csv(sNB.pred_p.ls[["LogD"]][[1]], 'output/nb/logD/nb_s_train_pred_p.csv')
+write.csv(sNB.pred_p.ls[["LogD"]][[2]], 'output/nb/logD/nb_s_test_pred_p.csv')
+write.csv(sNB.pred_p.ls[["LogD"]][[3]], 'output/nb/logD/nb_s_cases_pred_p.csv')
+write.csv(sNB.pred_p.ls[["LogD"]][[4]], 'output/nb/logD/nb_s_np_pred_p.csv')
+
+write.csv(sNB.pred_p.ls[["LogP"]][[1]], 'output/nb/logP/nb_s_train_pred_p.csv')
+write.csv(sNB.pred_p.ls[["LogP"]][[2]], 'output/nb/logP/nb_s_test_pred_p.csv')
+write.csv(sNB.pred_p.ls[["LogP"]][[3]], 'output/nb/logP/nb_s_cases_pred_p.csv')
+write.csv(sNB.pred_p.ls[["LogP"]][[4]], 'output/nb/logP/nb_s_np_pred_p.csv')
+
           
 # C) Confusion matrix
 sNB.conf.ls <- list(LogD=list(), LogP=list())
@@ -59,3 +85,19 @@ for (i in 1:2) {
     names(sNB.conf.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
     names(sNB.conf.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 }
+
+
+# Write files - "overall statistics"
+write.csv(sNB.conf.ls[["LogD"]][[1]]$overall, 'output/nb/logD/overall_statistics.csv')
+write.csv(sNB.conf.ls[["LogD"]][[2]]$overall, 'output/nb/logD/overall_statistics.csv')
+
+write.csv(sNB.conf.ls[["LogP"]][[1]]$overall, 'output/nb/logD/overall_statistics.csv')
+write.csv(sNB.conf.ls[["LogP"]][[2]]$overall, 'output/nb/logD/overall_statistics.csv')
+
+# Write files - "spec by class"
+write.csv(sNB.conf.ls[["LogD"]][[1]]$byClass, 'output/nb/logP/spec_byClass.csv')
+write.csv(sNB.conf.ls[["LogD"]][[2]]$byClass, 'output/nb/logP/spec_byClass.csv')
+
+write.csv(sNB.conf.ls[["LogP"]][[1]]$byClass, 'output/nb/logP/spec_byClass.csv')
+write.csv(sNB.conf.ls[["LogP"]][[2]]$byClass, 'output/nb/logP/spec_byClass.csv')
+
