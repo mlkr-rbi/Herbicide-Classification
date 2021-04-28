@@ -1,5 +1,5 @@
 # Comprehensive machine learning based study of the chemical space of herbicides
-*Laboratory for Machine Learning and Knowledge Representation, Rudjer Boskovic Intitute*
+*Laboratory for Machine Learning and Knowledge Representation, Rudjer Boskovic Institute*
 
 ## General Information
 Several modeling approaches were tested for characterisation of structure-activity relationships according to manually currated MoA/SoA and weed selectivity labels.
