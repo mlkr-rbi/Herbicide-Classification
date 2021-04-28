@@ -1,8 +1,10 @@
+library(caret)
+
 # Import pretrained models (HRAC Classifiers)
-hrac_rf.fin <- readRDS("models/hrac_rf.fin.rds")
-hrac_xgb.fin <- readRDS("models/hrac_xgb.fin.rds")
-hrac_svm.fin <- readRDS("models/hrac_svm.fin.rds")
-hrac_nb.fin <- readRDS("models/hrac_nb.fin.rds")
+hrac_rf.fin <- readRDS("models/hrac_rf_model.rds")
+hrac_xgb.fin <- readRDS("models/hrac_xgb_model.rds")
+hrac_svm.fin <- readRDS("models/hrac_svm_model.rds")
+hrac_nb.fin <- readRDS("models/hrac_nb_model.rds")
 
 # Import data
 h.train <- read.csv('data/h_train.csv', row.names=1)
