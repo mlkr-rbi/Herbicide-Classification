@@ -34,6 +34,19 @@ for (i in 1:4) {
     names(sSVM.pred.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
     names(sSVM.pred.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 }
+
+
+# Write files - "labels"
+write.csv(sSVM.pred.ls[["LogD"]][[1]], 'output/svm/logD/svm_s_train_pred.csv')
+write.csv(sSVM.pred.ls[["LogD"]][[2]], 'output/svm/logD/svm_s_test_pred.csv')
+write.csv(sSVM.pred.ls[["LogD"]][[3]], 'output/svm/logD/svm_s_cases_pred.csv')
+write.csv(sSVM.pred.ls[["LogD"]][[4]], 'output/svm/logD/svm_s_np_pred.csv')
+
+write.csv(sSVM.pred.ls[["LogP"]][[1]], 'output/svm/logP/svm_s_train_pred.csv')
+write.csv(sSVM.pred.ls[["LogP"]][[2]], 'output/svm/logP/svm_s_test_pred.csv')
+write.csv(sSVM.pred.ls[["LogP"]][[3]], 'output/svm/logP/svm_s_cases_pred.csv')
+write.csv(sSVM.pred.ls[["LogP"]][[4]], 'output/svm/logP/svm_s_np_pred.csv')
+
      
           
 # B) Confusion matrix
@@ -47,3 +60,18 @@ for (i in 1:2) {
     names(sSVM.conf.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 
 }
+
+
+# Write files - "overall statistics"
+write.csv(sSVM.conf.ls[["LogD"]][[1]]$overall, 'output/svm/logD/overall_statistics.csv')
+write.csv(sSVM.conf.ls[["LogD"]][[2]]$overall, 'output/svm/logD/overall_statistics.csv')
+
+write.csv(sSVM.conf.ls[["LogP"]][[1]]$overall, 'output/svm/logD/overall_statistics.csv')
+write.csv(sSVM.conf.ls[["LogP"]][[2]]$overall, 'output/svm/logD/overall_statistics.csv')
+
+# Write files - "spec by class"
+write.csv(sSVM.conf.ls[["LogD"]][[1]]$byClass, 'output/svm/logP/spec_byClass.csv')
+write.csv(sSVM.conf.ls[["LogD"]][[2]]$byClass, 'output/svm/logP/spec_byClass.csv')
+
+write.csv(sSVM.conf.ls[["LogP"]][[1]]$byClass, 'output/svm/logP/spec_byClass.csv')
+write.csv(sSVM.conf.ls[["LogP"]][[2]]$byClass, 'output/svm/logP/spec_byClass.csv')
