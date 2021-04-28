@@ -1,5 +1,5 @@
 # Comprehensive machine learning based study of the chemical space of herbicides
-*Davor Orsolic, Vesna Pehar, Tomislav Smuc, Visnja Stepanic*
+*Davor Orsolic, Vesna Pehar, Tomislav Smuc, Visnja Stepanic*  
 *Laboratory for Machine Learning and Knowledge Representation, Rudjer Boskovic Institute*
 
 ## General Information
