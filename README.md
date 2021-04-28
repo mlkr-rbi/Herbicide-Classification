@@ -1,4 +1,5 @@
 # Comprehensive machine learning based study of the chemical space of herbicides
+*Laboratory for Machine Learning and Knowledge Representation, Rudjer Boskovic Intitute*
 
 Several modeling approaches were tested for characterisation of structure-activity relationships according to manually currated MoA/SoA and weed selectivity labels.
 This repository contains code for hyperparamter tuning with 10x10-fold cross-validation and training of optimized models (randomForest, XGBoost, SVM, NaiveBayes) on whole training sets.
