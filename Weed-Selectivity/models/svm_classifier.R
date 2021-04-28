@@ -1,5 +1,4 @@
 # Load libraries
-library(randomForest)
 library(caret)
 
 # Import data
