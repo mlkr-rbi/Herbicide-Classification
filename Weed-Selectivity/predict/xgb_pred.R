@@ -33,6 +33,18 @@ for (i in 1:4) {
     names(sXGB.pred.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
     names(sXGB.pred.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 }
+
+
+# Write files - "labels"
+write.csv(sXGB.pred.ls[["LogD"]][[1]], 'output/xgb/logD/xgb_s_train_pred.csv')
+write.csv(sXGB.pred.ls[["LogD"]][[2]], 'output/xgb/logD/xgb_s_test_pred.csv')
+write.csv(sXGB.pred.ls[["LogD"]][[3]], 'output/xgb/logD/xgb_s_cases_pred.csv')
+write.csv(sXGB.pred.ls[["LogD"]][[4]], 'output/xgb/logD/xgb_s_np_pred.csv')
+
+write.csv(sXGB.pred.ls[["LogP"]][[1]], 'output/xgb/logP/xgb_s_train_pred.csv')
+write.csv(sXGB.pred.ls[["LogP"]][[2]], 'output/xgb/logP/xgb_s_test_pred.csv')
+write.csv(sXGB.pred.ls[["LogP"]][[3]], 'output/xgb/logP/xgb_s_cases_pred.csv')
+write.csv(sXGB.pred.ls[["LogP"]][[4]], 'output/xgb/logP/xgb_s_np_pred.csv')
           
 # B) Predict for each dataset - "prob"
 sXGB.pred_p.ls <- list(LogD=list(), LogP=list())
@@ -45,6 +57,19 @@ for (i in 1:4) {
     names(sXGB.pred_p.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 
 }
+
+
+# Write files - "probs"
+write.csv(sXGB.pred_p.ls[["LogD"]][[1]], 'output/xgb/logD/xgb_s_train_pred_p.csv')
+write.csv(sXGB.pred_p.ls[["LogD"]][[2]], 'output/xgb/logD/xgb_s_test_pred_p.csv')
+write.csv(sXGB.pred_p.ls[["LogD"]][[3]], 'output/xgb/logD/xgb_s_cases_pred_p.csv')
+write.csv(sXGB.pred_p.ls[["LogD"]][[4]], 'output/xgb/logD/xgb_s_np_pred_p.csv')
+
+write.csv(sXGB.pred_p.ls[["LogP"]][[1]], 'output/xgb/logP/xgb_s_train_pred_p.csv')
+write.csv(sXGB.pred_p.ls[["LogP"]][[2]], 'output/xgb/logP/xgb_s_test_pred_p.csv')
+write.csv(sXGB.pred_p.ls[["LogP"]][[3]], 'output/xgb/logP/xgb_s_cases_pred_p.csv')
+write.csv(sXGB.pred_p.ls[["LogP"]][[4]], 'output/xgb/logP/xgb_s_np_pred_p.csv')
+
           
 # C) Confusion matrix
 sXGB.conf.ls <- list(LogD=list(), LogP=list())
@@ -56,3 +81,18 @@ for (i in 1:2) {
     names(sXGB.conf.ls[["LogD"]])[i] <- names(sel_ts.ls[["LogD"]])[i]
     names(sXGB.conf.ls[["LogP"]])[i] <- names(sel_ts.ls[["LogP"]])[i]
 }
+
+
+# Write files - "overall statistics"
+write.csv(sXGB.conf.ls[["LogD"]][[1]]$overall, 'output/xgb/logD/overall_statistics.csv')
+write.csv(sXGB.conf.ls[["LogD"]][[2]]$overall, 'output/xgb/logD/overall_statistics.csv')
+
+write.csv(sXGB.conf.ls[["LogP"]][[1]]$overall, 'output/xgb/logD/overall_statistics.csv')
+write.csv(sXGB.conf.ls[["LogP"]][[2]]$overall, 'output/xgb/logD/overall_statistics.csv')
+
+# Write files - "spec by class"
+write.csv(sXGB.conf.ls[["LogD"]][[1]]$byClass, 'output/xgb/logP/spec_byClass.csv')
+write.csv(sXGB.conf.ls[["LogD"]][[2]]$byClass, 'output/xgb/logP/spec_byClass.csv')
+
+write.csv(sXGB.conf.ls[["LogP"]][[1]]$byClass, 'output/xgb/logP/spec_byClass.csv')
+write.csv(sXGB.conf.ls[["LogP"]][[2]]$byClass, 'output/xgb/logP/spec_byClass.csv')
