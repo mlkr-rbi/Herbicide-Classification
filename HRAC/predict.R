@@ -55,3 +55,18 @@ hrac_predictions <- list(RF = list(train = list(), test = list(), rest = list(),
       names(hrac_predictions[["NB"]][[i]])[[2]] <- paste0(names(hrac_datasets)[[i]], sep="_", "prob")
     
   }
+
+
+
+# Write files - "labels"
+write.csv(hrac_predictions[["RF"]][["train"]][["h.train_pred"]], "output/rf/h_train_pred.csv")
+write.csv(hrac_predictions[["SVM"]][["train"]][["h.train_pred"]], "output/svm/h_train_pred.csv")
+write.csv(hrac_predictions[["XGB"]][["train"]][["h.train_pred"]], "output/xgb/h_train_pred.csv")
+write.csv(hrac_predictions[["NB"]][["train"]][["h.train_pred"]], "output/nb/h_train_pred.csv")
+
+
+# Write files - "probs"
+write.csv(hrac_predictions[["RF"]][["train"]][["h.train_prob"]], "output/rf/h_train_prob.csv")
+write.csv(hrac_predictions[["SVM"]][["train"]][["h.train_prob"]], "output/svm/h_train_prob.csv")
+write.csv(hrac_predictions[["XGB"]][["train"]][["h.train_prob"]], "output/xgb/h_train_prob.csv")
+write.csv(hrac_predictions[["NB"]][["train"]][["h.train_prob"]], "output/nb/h_train_prob.csv")
