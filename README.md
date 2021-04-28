@@ -21,11 +21,11 @@ klaR 0.6-15
 
 ## Instructions 
 
-1) Clone github repository:  
+1) Clone github repository:    
 git clone https://github.com/davoors/Herbicide-Classification.git
 
-2) For HRAC or Weed-Selectivity approach go to "models" folder and run each model seperately with "Rscript" function, and pretrained models will be saved in the same folder as a .rds file: 
+2) For HRAC or Weed-Selectivity approach go to "models" folder and run each model seperately with "Rscript" function, and pretrained models will be saved in the same folder as a .rds file:  
 ex: Rscript svm_classifier.R
 
-3) To test pretrained model over a set of test sets, run a Predict.R script - Output files will be saved in the output folder for each dedicated approach (ex: "/output/svm/logD or ./logP"):
+3) To test pretrained model over a set of test sets, run a Predict.R script - Output files will be saved in the output folder for each dedicated approach (ex: "/output/svm/logD or ./logP"):  
 ex: Rscript svm_pred.R
