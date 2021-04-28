@@ -1,3 +1,5 @@
+library(caret)
+
 # Import data - LogD
 s.train.logD <- read.csv('../data/LogD/s_train_logD.csv', row.names=1)
 s.test.logD <- read.csv('../data/LogD/s_test_logD.csv', row.names=1)
