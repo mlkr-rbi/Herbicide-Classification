@@ -86,15 +86,15 @@ for (i in 1:2) {
 
 
 # Write files - "overall statistics"
-write.csv(sXGB.conf.ls[["LogD"]][[1]]$overall, 'output/xgb/logD/overall_statistics.csv')
-write.csv(sXGB.conf.ls[["LogD"]][[2]]$overall, 'output/xgb/logD/overall_statistics.csv')
+write.csv(sXGB.conf.ls[["LogD"]][[1]]$overall, 'output/xgb/logD/s_train_stat.csv')
+write.csv(sXGB.conf.ls[["LogD"]][[2]]$overall, 'output/xgb/logD/s_test_stat.csv')
 
-write.csv(sXGB.conf.ls[["LogP"]][[1]]$overall, 'output/xgb/logD/overall_statistics.csv')
-write.csv(sXGB.conf.ls[["LogP"]][[2]]$overall, 'output/xgb/logD/overall_statistics.csv')
+write.csv(sXGB.conf.ls[["LogP"]][[1]]$overall, 'output/xgb/logP/s_train_stat.csv')
+write.csv(sXGB.conf.ls[["LogP"]][[2]]$overall, 'output/xgb/logP/s_test_stat.csv')
 
 # Write files - "spec by class"
-write.csv(sXGB.conf.ls[["LogD"]][[1]]$byClass, 'output/xgb/logP/spec_byClass.csv')
-write.csv(sXGB.conf.ls[["LogD"]][[2]]$byClass, 'output/xgb/logP/spec_byClass.csv')
+write.csv(sXGB.conf.ls[["LogD"]][[1]]$byClass, 'output/xgb/logD/s_train_byClass.csv')
+write.csv(sXGB.conf.ls[["LogD"]][[2]]$byClass, 'output/xgb/logD/s_test_byClass.csv')
 
-write.csv(sXGB.conf.ls[["LogP"]][[1]]$byClass, 'output/xgb/logP/spec_byClass.csv')
-write.csv(sXGB.conf.ls[["LogP"]][[2]]$byClass, 'output/xgb/logP/spec_byClass.csv')
+write.csv(sXGB.conf.ls[["LogP"]][[1]]$byClass, 'output/xgb/logP/s_train_byClass.csv')
+write.csv(sXGB.conf.ls[["LogP"]][[2]]$byClass, 'output/xgb/logP/s_test_byClass.csv')

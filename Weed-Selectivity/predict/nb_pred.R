@@ -90,16 +90,16 @@ for (i in 1:2) {
 
 
 # Write files - "overall statistics"
-write.csv(sNB.conf.ls[["LogD"]][[1]]$overall, 'output/nb/logD/overall_statistics.csv')
-write.csv(sNB.conf.ls[["LogD"]][[2]]$overall, 'output/nb/logD/overall_statistics.csv')
+write.csv(sNB.conf.ls[["LogD"]][[1]]$overall, 'output/nb/logD/s_train_stat.csv')
+write.csv(sNB.conf.ls[["LogD"]][[2]]$overall, 'output/nb/logD/s_test_stat.csv')
 
-write.csv(sNB.conf.ls[["LogP"]][[1]]$overall, 'output/nb/logD/overall_statistics.csv')
-write.csv(sNB.conf.ls[["LogP"]][[2]]$overall, 'output/nb/logD/overall_statistics.csv')
+write.csv(sNB.conf.ls[["LogP"]][[1]]$overall, 'output/nb/logP/s_train_stat.csv')
+write.csv(sNB.conf.ls[["LogP"]][[2]]$overall, 'output/nb/logP/s_test_stat.csv')
 
 # Write files - "spec by class"
-write.csv(sNB.conf.ls[["LogD"]][[1]]$byClass, 'output/nb/logP/spec_byClass.csv')
-write.csv(sNB.conf.ls[["LogD"]][[2]]$byClass, 'output/nb/logP/spec_byClass.csv')
+write.csv(sNB.conf.ls[["LogD"]][[1]]$byClass, 'output/nb/logD/s_train_byClass.csv')
+write.csv(sNB.conf.ls[["LogD"]][[2]]$byClass, 'output/nb/logD/s_test_byClass.csv')
 
-write.csv(sNB.conf.ls[["LogP"]][[1]]$byClass, 'output/nb/logP/spec_byClass.csv')
-write.csv(sNB.conf.ls[["LogP"]][[2]]$byClass, 'output/nb/logP/spec_byClass.csv')
+write.csv(sNB.conf.ls[["LogP"]][[1]]$byClass, 'output/nb/logP/s_train_byClass.csv')
+write.csv(sNB.conf.ls[["LogP"]][[2]]$byClass, 'output/nb/logP/s_test_byClass.csv')
 

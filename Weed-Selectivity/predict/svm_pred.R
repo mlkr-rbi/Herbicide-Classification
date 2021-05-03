@@ -65,15 +65,15 @@ for (i in 1:2) {
 
 
 # Write files - "overall statistics"
-write.csv(sSVM.conf.ls[["LogD"]][[1]]$overall, 'output/svm/logD/overall_statistics.csv')
-write.csv(sSVM.conf.ls[["LogD"]][[2]]$overall, 'output/svm/logD/overall_statistics.csv')
+write.csv(sSVM.conf.ls[["LogD"]][[1]]$overall, 'output/svm/logD/s_train_stat.csv')
+write.csv(sSVM.conf.ls[["LogD"]][[2]]$overall, 'output/svm/logD/s_test_stat.csv')
 
-write.csv(sSVM.conf.ls[["LogP"]][[1]]$overall, 'output/svm/logD/overall_statistics.csv')
-write.csv(sSVM.conf.ls[["LogP"]][[2]]$overall, 'output/svm/logD/overall_statistics.csv')
+write.csv(sSVM.conf.ls[["LogP"]][[1]]$overall, 'output/svm/logP/s_train_stat.csv')
+write.csv(sSVM.conf.ls[["LogP"]][[2]]$overall, 'output/svm/logP/s_test_stat.csv')
 
 # Write files - "spec by class"
-write.csv(sSVM.conf.ls[["LogD"]][[1]]$byClass, 'output/svm/logP/spec_byClass.csv')
-write.csv(sSVM.conf.ls[["LogD"]][[2]]$byClass, 'output/svm/logP/spec_byClass.csv')
+write.csv(sSVM.conf.ls[["LogD"]][[1]]$byClass, 'output/svm/logD/s_train_byClass.csv')
+write.csv(sSVM.conf.ls[["LogD"]][[2]]$byClass, 'output/svm/logD/s_test_byClass.csv')
 
-write.csv(sSVM.conf.ls[["LogP"]][[1]]$byClass, 'output/svm/logP/spec_byClass.csv')
-write.csv(sSVM.conf.ls[["LogP"]][[2]]$byClass, 'output/svm/logP/spec_byClass.csv')
+write.csv(sSVM.conf.ls[["LogP"]][[1]]$byClass, 'output/svm/logP/s_train_byClass.csv')
+write.csv(sSVM.conf.ls[["LogP"]][[2]]$byClass, 'output/svm/logP/s_test_byClass.csv')

@@ -28,7 +28,7 @@ hrac_predictions <- list(RF = list(train = list(), test = list(), rest = list(),
                          SVM = list(train = list(), test = list(), rest = list(), z = list(), np = list()), 
                          NB = list(train = list(), test = list(), rest = list(), z = list(), np = list()))
 
-# Predict labels and class probabilities for each dataset 
+# A) Predict labels and class probabilities for each dataset 
           
   for (i in 1:length(hrac_datasets)) {
       # RF
@@ -72,3 +72,46 @@ write.csv(hrac_predictions[["RF"]][["train"]][["h.train_prob"]], "output/rf/h_tr
 write.csv(hrac_predictions[["SVM"]][["train"]][["h.train_prob"]], "output/svm/h_train_prob.csv")
 write.csv(hrac_predictions[["XGB"]][["train"]][["h.train_prob"]], "output/xgb/h_train_prob.csv")
 write.csv(hrac_predictions[["NB"]][["train"]][["h.train_prob"]], "output/nb/h_train_prob.csv")
+
+
+# B) Confusion matrix
+hrac.conf.ls <- list(RF=list(), XGB=list(), SVM=list(), NB=list())
+           
+for (i in 1:2) {
+  hrac.conf.ls[["RF"]][[i]] <- confusionMatrix(hrac_predictions[["RF"]][[i]][[1]], factor(hrac_datasets[[i]]$HRAC2020_class))
+  hrac.conf.ls[["XGB"]][[i]] <- confusionMatrix(hrac_predictions[["XGB"]][[i]][[1]], factor(hrac_datasets[[i]]$HRAC2020_class))
+  hrac.conf.ls[["SVM"]][[i]] <- confusionMatrix(hrac_predictions[["SVM"]][[i]][[1]], factor(hrac_datasets[[i]]$HRAC2020_class))
+  hrac.conf.ls[["NB"]][[i]] <- confusionMatrix(hrac_predictions[["NB"]][[i]][[1]], factor(hrac_datasets[[i]]$HRAC2020_class))
+            
+  names(hrac.conf.ls[["RF"]])[i] <- names(hrac_datasets)[i]
+  names(hrac.conf.ls[["XGB"]])[i] <- names(hrac_datasets)[i]
+  names(hrac.conf.ls[["SVM"]])[i] <- names(hrac_datasets)[i]
+  names(hrac.conf.ls[["NB"]])[i] <- names(hrac_datasets)[i]
+
+}
+
+# Write files - "overall statistics"
+write.csv(hrac.conf.ls[["RF"]][["h.train"]]$overall, "output/rf/h_train_stat.csv")
+write.csv(hrac.conf.ls[["RF"]][["h.test"]]$overall, "output/rf/h_test_stat.csv")
+
+write.csv(hrac.conf.ls[["XGB"]][["h.train"]]$overall, "output/xgb/h_train_stat.csv")
+write.csv(hrac.conf.ls[["XGB"]][["h.test"]]$overall, "output/xgb/h_test_stat.csv")
+
+write.csv(hrac.conf.ls[["SVM"]][["h.train"]]$overall, "output/svm/h_train_stat.csv")
+write.csv(hrac.conf.ls[["SVM"]][["h.test"]]$overall, "output/svm/h_test_stat.csv")
+
+write.csv(hrac.conf.ls[["NB"]][["h.train"]]$overall, "output/nb/h_train_stat.csv")
+write.csv(hrac.conf.ls[["NB"]][["h.test"]]$overall, "output/nb/h_test_stat.csv")
+
+# Write files - "spec by class"
+write.csv(hrac.conf.ls[["RF"]][["h.train"]]$byClass , "output/rf/h_train_byClass.csv")
+write.csv(hrac.conf.ls[["RF"]][["h.test"]]$byClass, "output/rf/h_test_byClass.csv")
+
+write.csv(hrac.conf.ls[["XGB"]][["h.train"]]$byClass , "output/xgb/h_train_byClass.csv")
+write.csv(hrac.conf.ls[["XGB"]][["h.test"]]$byClass, "output/xgb/h_test_byClass.csv")
+
+write.csv(hrac.conf.ls[["SVM"]][["h.train"]]$byClass , "output/svm/h_train_byClass.csv")
+write.csv(hrac.conf.ls[["SVM"]][["h.test"]]$byClass, "output/svm/h_test_byClass.csv")
+
+write.csv(hrac.conf.ls[["NB"]][["h.train"]]$byClass , "output/nb/h_train_byClass.csv")
+write.csv(hrac.conf.ls[["NB"]][["h.test"]]$byClass, "output/nb/h_test_byClass.csv")
