@@ -1,2 +1,8 @@
 Compound space is represented in terms of 166-bit MACCS structural fingerprints. 
 Data is preprocessed to contain only fingerprints with >= 5 units.
+
+`h_train.csv` training set
+`h_test.csv` training set
+`h_zclass.csv` herbicides with undefined mode of action
+`h_np.csv` natural compounds with potential for herbicidal activity
+`h_rest.csv` additionally collected compounds for screening
